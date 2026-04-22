@@ -75,9 +75,14 @@ my $actual_queries = scalar @queries;
 #-----------------------------------------------------
 # Detect number of cores
 #-----------------------------------------------------
-my $num_cores = `lscpu -p | grep -v '^#' | wc -l`;
-#my $num_cores = 2;
-chomp($num_cores);
+my $num_cores = $ENV{GRMAP_CORES};
+if (!defined $num_cores || $num_cores !~ /^\d+$/ || $num_cores < 1) {
+    $num_cores = `getconf _NPROCESSORS_ONLN 2>/dev/null`;
+    chomp($num_cores);
+}
+if (!defined $num_cores || $num_cores !~ /^\d+$/ || $num_cores < 1) {
+    $num_cores = 1;
+}
 
 #-----------------------------------------------------
 # Split queries among child processes (forking)

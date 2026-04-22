@@ -2,9 +2,18 @@
 
 ## Inputs
 
-- Read FASTA(.gz)
-- Reference FASTA(.gz)
-- Annotation resources (GFF3, TSS TSV, CpG table, RepeatMasker BED-like)
+### Mode A: glob input mode
+- Reads from `--input` glob (default: `data/reads/*.fasta.gz`)
+- Shared annotation defaults from `--annotation_dir`/override params
+
+### Mode B: samplesheet mode
+CSV columns:
+
+```text
+sample,reads,chromosome,gff,tss,cpg,repeatmasker
+```
+
+Each row defines one processing unit with explicit chromosome/annotation mapping.
 
 ## Outputs
 
@@ -16,4 +25,4 @@
 - `results/gene_cpg_gc.png`
 - `results/tss_distance.png`
 - `results/tss_type.png`
-- `results/pipeline_info/{trace,report,timeline,dag}`
+- `results/pipeline_info/{trace,report,timeline,dag}` (or `--tracedir` override)

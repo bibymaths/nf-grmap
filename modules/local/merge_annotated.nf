@@ -9,9 +9,14 @@ process MERGE_ANNOTATED {
 
     script:
     """
-    first_file=$(ls *.annotated.tsv | head -n1)
-    head -n1 "${first_file}" > all_samples.annotated.tsv
-    for f in *.annotated.tsv; do
+    mapfile -t files < <(ls *.annotated.tsv | sort)
+    if [[ ${#files[@]} -eq 0 ]]; then
+      echo "No annotation files found" >&2
+      exit 1
+    fi
+
+    head -n1 "${files[0]}" > all_samples.annotated.tsv
+    for f in "${files[@]}"; do
       tail -n +2 "$f" >> all_samples.annotated.tsv
     done
     """

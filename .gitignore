@@ -3,3 +3,5 @@ results_test/
 .snakemake/
 .nextflow*
 work/
+__pycache__/
+bin/__pycache__/

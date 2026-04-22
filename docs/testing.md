@@ -1,23 +1,25 @@
 # Testing
 
-## Lightweight checks
+## Test profile wiring
 
-- Perl syntax checks.
-- Python syntax checks.
-- Nextflow config/schema parse checks.
+`conf/test.config` defines a minimal smoke dataset (`data/reads/illumina_reads_40.fasta.gz`) and writes to `results_test/`.
 
-## Smoke test
-
-Use bundled input with test profile:
+## Recommended checks
 
 ```bash
-nextflow run . -profile test,docker
+make lint
 ```
-
-## Perl-focused tests
-
-Run:
 
 ```bash
-bash tests/perl/run_perl_checks.sh
+nextflow run . -profile test,local
 ```
+
+```bash
+bash tests/smoke/check_outputs.sh results_test
+```
+
+## CI strategy (minimal)
+
+- Lint Perl + Python helper scripts.
+- Run a smoke workflow (`test,local`) on bundled data.
+- Assert expected output artifacts exist.

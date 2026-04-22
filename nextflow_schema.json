@@ -23,6 +23,15 @@
         "outdir": {
           "type": "string",
           "default": "results"
+        },
+        "publish_mode": {
+          "type": "string",
+          "enum": ["copy", "move", "link", "symlink", "rellink"],
+          "default": "copy"
+        },
+        "tracedir": {
+          "type": ["string", "null"],
+          "description": "Optional override for pipeline metadata outputs (trace/report/timeline/dag)"
         }
       }
     },
@@ -30,10 +39,11 @@
       "title": "Algorithm options",
       "type": "object",
       "properties": {
-        "querysize": {
+        "query_size": {
           "type": "integer",
           "default": 10,
-          "minimum": 0
+          "minimum": 0,
+          "description": "Maximum number of reads to load in match.pl (0 = all reads)"
         },
         "chromosome": {
           "type": "string",

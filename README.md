@@ -2,31 +2,37 @@
 
 GRmap is a lightweight workflow for matching sequencing reads to a reference genome and annotating those matches with gene, TSS, CpG, and repeat metadata.
 
-This repository now includes:
+The repository contains:
 
-- a **legacy Snakemake implementation** (`Snakefile`) used as migration source of truth,
-- a **Nextflow DSL2 implementation** (`main.nf`) with modular processes,
-- docs and project governance files for maintainable open-source development.
+- the legacy Snakemake implementation (`Snakefile`) retained as migration reference,
+- the maintained Nextflow DSL2 implementation (`main.nf`),
+- documentation and project metadata for maintainable open-source use.
 
-## Current recommended engine
+## Recommended workflow engine
 
 Use **Nextflow DSL2**.
 
-## Quick run (default chr1 mode)
+## Quick start
+
+```bash
+nextflow run . -profile local
+```
+
+With containerized process execution:
 
 ```bash
 nextflow run . -profile docker
 ```
 
-## Quick run (samplesheet mode for multi-chromosome-ready input)
+With explicit per-row chromosome metadata:
 
 ```bash
-nextflow run . -profile docker --samplesheet assets/samplesheet.csv
+nextflow run . -profile local --samplesheet assets/samplesheet.csv
 ```
 
 ## Documentation
 
-Full docs live in `docs/` and are built with MkDocs Material.
+See `docs/` (MkDocs Material).
 
 ## License
 

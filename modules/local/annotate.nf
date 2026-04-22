@@ -10,6 +10,7 @@ process ANNOTATE {
 
     script:
     """
+    export GRMAP_CORES=${task.cpus}
     perl ${projectDir}/scripts/annotate.pl \
       ${matched} ${gff} ${tss} ${cpg} ${repeatmasker} ${meta.chromosome} \
       > ${meta.sample}.annotated.tsv

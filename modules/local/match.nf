@@ -11,6 +11,7 @@ process MATCH {
 
     script:
     """
-    perl ${projectDir}/scripts/match.pl ${reads} ${reference} ${params.querysize} > ${meta.sample}.matched
+    export GRMAP_CORES=${task.cpus}
+    perl ${projectDir}/scripts/match.pl ${reads} ${reference} ${params.query_size} > ${meta.sample}.matched
     """
 }

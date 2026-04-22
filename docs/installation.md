@@ -1,22 +1,24 @@
 # Installation
 
-## Runtime prerequisites
+## Required
 
-- Nextflow (>= 23.10)
-- One runtime profile:
-  - Docker (recommended), or
-  - Singularity/Apptainer, or
-  - Local environment with Perl + Python scientific stack
+- Nextflow `>=23.10`
 
-## Container-first recommendation
+## Runtime options
 
-Build image:
+### Option 1: local runtime dependencies
+Install Perl dependencies used by `scripts/annotate.pl` plus Python plotting dependencies.
+
+### Option 2: containerized task execution (recommended)
+Use Docker or Singularity profiles so each Nextflow process runs in the pipeline container.
+
+## Build container image locally
 
 ```bash
 docker build -t grmap:dev .
 ```
 
-Run with Docker profile:
+Then run with:
 
 ```bash
 nextflow run . -profile docker

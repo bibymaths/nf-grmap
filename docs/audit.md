@@ -112,4 +112,4 @@ Before migration, not production ready for HPC due to:
 - No container definition.
 - No project governance/security/release metadata.
 
-Target state adds Nextflow profiles (`local/docker/singularity/slurm`), container-first guidance, and baseline project hygiene.
+Target state adds Nextflow profiles (`local/docker/singularity/hpc (Slurm executor)`), container-first guidance, and baseline project hygiene.

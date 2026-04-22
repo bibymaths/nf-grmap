@@ -31,6 +31,10 @@ workflow GRMAP {
 }
 
 def validateParams() {
+    if (params.samplesheet && params.input) {
+        log.warn "Both --samplesheet and --input were provided; --samplesheet will be used."
+    }
+
     if (!params.samplesheet && !params.input) {
         error "Provide either --samplesheet or --input"
     }
@@ -41,6 +45,7 @@ def buildSampleChannel() {
         return Channel
             .fromPath(params.samplesheet, checkIfExists: true)
             .splitCsv(header: true)
+            .ifEmpty { error "Samplesheet '${params.samplesheet}' is empty" }
             .map { row ->
                 def required = ['sample', 'reads', 'chromosome', 'gff', 'tss', 'cpg', 'repeatmasker']
                 required.each { key ->
@@ -48,6 +53,7 @@ def buildSampleChannel() {
                         error "Missing '${key}' column value in samplesheet row: ${row}"
                     }
                 }
+
                 def meta = [
                     sample      : row.sample,
                     chromosome  : row.chromosome,
@@ -56,12 +62,13 @@ def buildSampleChannel() {
                     cpg         : row.cpg,
                     repeatmasker: row.repeatmasker
                 ]
-                tuple(meta, file(row.reads))
+                tuple(meta, file(row.reads, checkIfExists: true))
             }
     }
 
     return Channel
         .fromPath(params.input, checkIfExists: true)
+        .ifEmpty { error "No reads found for pattern '${params.input}'" }
         .map { reads ->
             def sample = reads.simpleName.replaceAll(/\.fasta$/, '')
             def meta = [

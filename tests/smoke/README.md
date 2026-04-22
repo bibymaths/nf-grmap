@@ -1,9 +1,13 @@
 # Smoke tests
 
-Minimal smoke run:
+Run a minimal pipeline execution:
 
 ```bash
-nextflow run . -profile test
+nextflow run . -profile test,local
 ```
 
-Validate expected outputs in `results_test/`.
+Validate expected artifacts:
+
+```bash
+bash tests/smoke/check_outputs.sh results_test
+```

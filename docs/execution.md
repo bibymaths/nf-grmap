@@ -1,6 +1,12 @@
 # Running locally and on HPC
 
-## Local
+## Local executor
+
+```bash
+nextflow run . -profile local
+```
+
+## Docker
 
 ```bash
 nextflow run . -profile docker
@@ -12,10 +18,10 @@ nextflow run . -profile docker
 nextflow run . -profile singularity
 ```
 
-## Slurm cluster
+## HPC (Slurm executor profile)
 
 ```bash
-nextflow run . -profile slurm,singularity
+nextflow run . -profile hpc,singularity
 ```
 
-Tune resources in `nextflow.config` per process label/withName.
+Tune per-process resources in `nextflow.config` (`withName: MATCH`, `ANNOTATE`, etc.).

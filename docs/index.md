@@ -1,11 +1,11 @@
 # GRmap overview
 
-GRmap performs two computational core operations using Perl scripts:
+GRmap performs two core operations:
 
-1. `scripts/match.pl`: exact read sequence matching against a reference FASTA.
-2. `scripts/annotate.pl`: genomic annotation of match coordinates with GFF3, TSS, CpG, and RepeatMasker data.
+1. `scripts/match.pl` — exact read matching against a reference FASTA.
+2. `scripts/annotate.pl` — annotation of matched coordinates with GFF3, TSS, CpG, and RepeatMasker data.
 
-The Nextflow DSL2 pipeline wraps these scripts and reproduces the original Snakemake logic while adding profile-based execution, better structure, and extension points.
+The maintained implementation is a Nextflow DSL2 pipeline that wraps these scripts in modular processes and supports local, Docker, Singularity, and HPC (Slurm) execution profiles.
 
 !!! note
-    The migration design and implementation are derived directly from the legacy `Snakefile`, Perl scripts, and bundled example data.
+    The migration and current architecture are implementation-driven from the repository's original Snakemake workflow and script behavior.
