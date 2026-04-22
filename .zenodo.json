@@ -4,10 +4,18 @@
   "creators": [
     {
       "name": "Mishra, Abhinav",
-      "affiliation": "Freie Universität Berlin"
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0005-3179-7408"
     }
   ],
   "license": "BSD-3-Clause",
   "keywords": ["nextflow", "bioinformatics", "genomics", "workflow", "perl"],
-  "upload_type": "software"
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/bibymaths/GRmap",
+      "relation": "isSupplementTo"
+    }
+  ],
+  "access_right": "open"
 }

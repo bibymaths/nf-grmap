@@ -5,7 +5,8 @@ type: software
 authors:
   - family-names: Mishra
     given-names: Abhinav
-    email: mishraabhinav36@gmail.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0005-3179-7408"
 repository-code: "https://github.com/bibymaths/grmap"
 license: BSD-3-Clause
 version: 0.2.0
