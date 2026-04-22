@@ -5,10 +5,12 @@ process PLOT_TSS_DISTANCE {
     path merged
 
     output:
-    path 'tss_distance.png'
+    path 'tss_distance.png', emit: tss_distance_png
 
     script:
     """
-    python ${projectDir}/bin/plot_tss_distance.py --input ${merged} --output tss_distance.png
+    python ${projectDir}/bin/plot_tss_distance.py \
+      --input ${merged} \
+      --output tss_distance.png
     """
 }

@@ -5,10 +5,12 @@ process PLOT_TSS_TYPE {
     path merged
 
     output:
-    path 'tss_type.png'
+    path 'tss_type.png', emit: tss_type_png
 
     script:
     """
-    python ${projectDir}/bin/plot_tss_type.py --input ${merged} --output tss_type.png
+    python ${projectDir}/bin/plot_tss_type.py \
+      --input ${merged} \
+      --output tss_type.png
     """
 }

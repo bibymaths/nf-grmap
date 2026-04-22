@@ -9,25 +9,26 @@ workflow GRMAP {
     main:
     validateParams()
 
-    ch_samples = buildSampleChannel()
+    ch_samples   = buildSampleChannel()
     ch_reference = Channel.fromPath(params.reference, checkIfExists: true)
 
-    ch_annotated = GRMAP_CORE(ch_samples, ch_reference).annotated
+    ch_annotated       = GRMAP_CORE(ch_samples, ch_reference).annotated
     ch_annotated_files = ch_annotated.map { meta, annotated -> annotated }
 
-    merged = MERGE_ANNOTATED(ch_annotated_files.collect())
-    summary = SUMMARIZE_MATCHES(merged)
-    plots_counts = PLOT_COUNTS_AND_CPG_GC(summary)
-    tss_distance = PLOT_TSS_DISTANCE(merged)
-    tss_type = PLOT_TSS_TYPE(merged)
+    merged       = MERGE_ANNOTATED(ch_annotated_files.collect())
+    summary      = SUMMARIZE_MATCHES(merged.merged_tsv)
+    plots_counts = PLOT_COUNTS_AND_CPG_GC(summary.summary_txt)
+    tss_distance = PLOT_TSS_DISTANCE(merged.merged_tsv)
+    tss_type     = PLOT_TSS_TYPE(merged.merged_tsv)
 
     emit:
-    annotated = ch_annotated
-    merged = merged
-    summary = summary
-    plots_counts = plots_counts
-    tss_distance = tss_distance
-    tss_type = tss_type
+    annotated        = ch_annotated
+    merged           = merged.merged_tsv
+    summary          = summary.summary_txt
+    gene_counts_png  = plots_counts.gene_counts_png
+    gene_cpg_gc_png  = plots_counts.gene_cpg_gc_png
+    tss_distance_png = tss_distance.tss_distance_png
+    tss_type_png     = tss_type.tss_type_png
 }
 
 def validateParams() {

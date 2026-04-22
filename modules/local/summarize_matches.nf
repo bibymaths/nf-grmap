@@ -5,15 +5,17 @@ process SUMMARIZE_MATCHES {
     path merged
 
     output:
-    path 'summary_counts.txt'
+    path 'summary_counts.txt', emit: summary_txt
 
     script:
     """
+    set -euo pipefail
+
     cut -f9,10,15 ${merged} \
       | tail -n +2 \
       | sort \
       | uniq -c \
-      | awk '{print $2"\t"$3"\t"$4"\t"$1}' \
+      | awk '{printf "%s\\t%s\\t%s\\t%s\\n", \$2, \$3, \$4, \$1}' \
       > summary_counts.txt
     """
 }

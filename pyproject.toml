@@ -1,0 +1,13 @@
+[project]
+name = "grmap-local-tools"
+version = "0.1.0"
+description = "Local Python dependencies for GRMAP plotting utilities"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas==2.2.2",
+  "matplotlib==3.9.0",
+  "seaborn==0.13.2",
+]
+
+[tool.uv]
+package = false
