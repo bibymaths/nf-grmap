@@ -1,22 +1,11 @@
-# GRmap
-  
-[![Snakemake](https://img.shields.io/badge/snakemake-≥5.6.0-brightgreen.svg?style=flat)](https://snakemake.readthedocs.io)
+# GRmap overview
 
-[![DOI](https://zenodo.org/badge/592387295.svg)](https://doi.org/10.5281/zenodo.15390190)
+GRmap performs two core operations:
 
-A Snakemake-driven pipeline to  
+1. `scripts/match.pl` — exact read matching against a reference FASTA.
+2. `scripts/annotate.pl` — annotation of matched coordinates with GFF3, TSS, CpG, and RepeatMasker data.
 
-- **Match** sequencing reads against a reference  
-- **Annotate** matched regions with gene, CpG, TSS, and repeat information  
+The maintained implementation is a Nextflow DSL2 pipeline that wraps these scripts in modular processes and supports local, Docker, Singularity, and HPC (Slurm) execution profiles.
 
-**Key features**    
-
-- Fast and efficient read matching 
-- Handles compressed FASTA and GFF/BED inputs   
-- Supports multiple read lengths and query sizes
-- Configurable via `config.yaml`
-- Outputs per-sample annotation files in `results/`
-
----
-
-*Next*: [Quickstart](quickstart.md)
+!!! note
+    The migration and current architecture are implementation-driven from the repository's original Snakemake workflow and script behavior.

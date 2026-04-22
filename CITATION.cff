@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: GRmap
+message: "If you use this software, please cite it."
+type: software
+authors:
+  - family-names: Mishra
+    given-names: Abhinav
+    email: mishraabhinav36@gmail.com
+repository-code: "https://github.com/bibymaths/grmap"
+license: BSD-3-Clause
+version: 0.2.0
+date-released: 2026-04-22

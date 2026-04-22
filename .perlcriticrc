@@ -1,0 +1,8 @@
+severity = 4
+verbose = 8
+
+[TestingAndDebugging::ProhibitNoStrict]
+severity = 5
+
+[TestingAndDebugging::ProhibitNoWarnings]
+severity = 5

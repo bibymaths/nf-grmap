@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "grmap parameters",
+  "type": "object",
+  "definitions": {
+    "input_output_options": {
+      "title": "Input/output options",
+      "type": "object",
+      "properties": {
+        "input": {
+          "type": "string",
+          "description": "Glob pattern for read FASTA/FASTA.GZ files (used when samplesheet is not supplied)",
+          "default": "data/reads/*.fasta.gz"
+        },
+        "samplesheet": {
+          "type": ["string", "null"],
+          "description": "CSV with columns sample,reads,chromosome,gff,tss,cpg,repeatmasker"
+        },
+        "reference": {
+          "type": "string",
+          "default": "data/ref/hg38_partial.fasta.gz"
+        },
+        "outdir": {
+          "type": "string",
+          "default": "results"
+        },
+        "publish_mode": {
+          "type": "string",
+          "enum": ["copy", "move", "link", "symlink", "rellink"],
+          "default": "copy"
+        },
+        "tracedir": {
+          "type": ["string", "null"],
+          "description": "Optional override for pipeline metadata outputs (trace/report/timeline/dag)"
+        }
+      }
+    },
+    "algorithm_options": {
+      "title": "Algorithm options",
+      "type": "object",
+      "properties": {
+        "query_size": {
+          "type": "integer",
+          "default": 10,
+          "minimum": 0,
+          "description": "Maximum number of reads to load in match.pl (0 = all reads)"
+        },
+        "chromosome": {
+          "type": "string",
+          "default": "chr1",
+          "description": "Default chromosome label used when samplesheet is absent"
+        }
+      }
+    },
+    "annotation_options": {
+      "title": "Annotation options",
+      "type": "object",
+      "properties": {
+        "annotation_dir": {
+          "type": "string",
+          "default": "data/annotations"
+        },
+        "gff": {
+          "type": ["string", "null"]
+        },
+        "tss": {
+          "type": ["string", "null"]
+        },
+        "cpg": {
+          "type": ["string", "null"]
+        },
+        "repeatmasker": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  },
+  "allOf": [
+    { "$ref": "#/definitions/input_output_options" },
+    { "$ref": "#/definitions/algorithm_options" },
+    { "$ref": "#/definitions/annotation_options" }
+  ]
+}

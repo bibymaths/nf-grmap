@@ -1,28 +1,32 @@
-# Quickstart
+# Quick start
 
-**Clone the repo**   
+## Prerequisites
 
-```bash
-git clone https://github.com/bibymaths/grmap
-cd grmap
-``` 
- 
-**Edit `config.yaml`**
+- Nextflow `>=23.10`
+- Either:
+  - local runtime dependencies (Perl modules + Python plotting stack), or
+  - Docker/Singularity profile for process containers.
 
-- Set `read` to your reads pattern.
-- Point `reference`, `annotations`, `scripts_dir`, and `results_dir` to the correct paths.
-
-**Create your environment**
+## 1) Local profile
 
 ```bash
-conda create -n grmap -c conda-forge -c bioconda snakemake matplotlib numpy=1.26
-conda activate grmap 
-sudo cpan Parallel::ForkManager IO::Uncompress::Gunzip
-```
- 
-**Run the pipeline**
-
-```bash
-snakemake --cores 1 --report results/report.html --report-after-run
+nextflow run . -profile local
 ```
 
+## 2) Docker profile (containerized tasks)
+
+```bash
+nextflow run . -profile docker
+```
+
+## 3) Samplesheet mode (multi-chromosome-ready wiring)
+
+```bash
+nextflow run . -profile local --samplesheet assets/samplesheet.csv
+```
+
+## 4) Minimal smoke test profile
+
+```bash
+nextflow run . -profile test,local
+```

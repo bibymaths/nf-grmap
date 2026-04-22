@@ -1,52 +1,39 @@
-
 # GRmap
-  
-[![Snakemake](https://img.shields.io/badge/snakemake-≥5.6.0-brightgreen.svg?style=flat)](https://snakemake.readthedocs.io) 
 
-[![DOI](https://zenodo.org/badge/592387295.svg)](https://doi.org/10.5281/zenodo.15390190)
+GRmap is a lightweight workflow for matching sequencing reads to a reference genome and annotating those matches with gene, TSS, CpG, and repeat metadata.
 
-A lightweight Snakemake pipeline for mapping sequencing reads to a reference genome and annotating them with genomic features.
+The repository contains:
 
----
+- the legacy Snakemake implementation (`Snakefile`) retained as migration reference,
+- the maintained Nextflow DSL2 implementation (`main.nf`),
+- documentation and project metadata for maintainable open-source use.
 
-## Overview
+## Recommended workflow engine
 
-The pipeline performs two main steps:
+Use **Nextflow DSL2**.
 
-1. **Matching** reads to a reference genome
-2. **Annotating** matches with gene, TSS, CpG, and repeat element data
+## Quick start
 
-It is fully configurable via a single `config.yaml` file.
+```bash
+nextflow run . -profile local
+```
 
----
+With containerized process execution:
+
+```bash
+nextflow run . -profile docker
+```
+
+With explicit per-row chromosome metadata:
+
+```bash
+nextflow run . -profile local --samplesheet assets/samplesheet.csv
+```
 
 ## Documentation
 
-See the full [documentation](docs/index.md) for:
-
-* Configuration details
-* Workflow and process overview
-* Input/output descriptions
-* Example datasets
-
----
+See `docs/` (MkDocs Material).
 
 ## License
 
-See [LICENSE](LICENSE) for details.
-
---- 
- 
-## Authors
-
-**Abhinav Mishra**  
-Email: [mishraabhinav@gmail.com](mailto:mishraabhinav@gmail.com)
- 
---- 
- 
-## Acknowledgements 
-   
-Developed during a block course student project in the module *Introduction to Focus Areas*
-Master’s in Bioinformatics program at **Freie Universität Berlin**. 
- 
----
+BSD 3-Clause, see [LICENSE](LICENSE).

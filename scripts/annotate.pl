@@ -25,6 +25,8 @@ use warnings;
 use diagnostics;
 use Parallel::ForkManager;
 use List::Util qw(min max);
+use File::Path qw(make_path remove_tree);
+use File::Spec;
 use IO::Uncompress::Gunzip qw(gunzip $GunzipError);
 
 # Global data structures for genomic features
@@ -34,9 +36,14 @@ my (%genes, %tss, %cpg, %repeats, %sorted_cpg, %sorted_repeats);
 my $out_fh = *STDOUT;
 
 # Detect number of CPU cores for parallel processing
-my $num_cores = `lscpu -p | grep -v '^#' | wc -l`;
-#my $num_cores = 2;
-chomp($num_cores);
+my $num_cores = $ENV{GRMAP_CORES};
+if (!defined $num_cores || $num_cores !~ /^\d+$/ || $num_cores < 1) {
+    $num_cores = `getconf _NPROCESSORS_ONLN 2>/dev/null`;
+    chomp($num_cores);
+}
+if (!defined $num_cores || $num_cores !~ /^\d+$/ || $num_cores < 1) {
+    $num_cores = 1;
+}
 my $pm = Parallel::ForkManager->new($num_cores);
 
 ##############################
@@ -273,7 +280,7 @@ sub is_in_repeat_region {
 ### start, end, strand, matched sequence, marker_id, length, occurrences, upstream, downstream.
 ### The chromosome is assumed (or provided elsewhere); here we assume "chr1" if not available.
 sub process_matched_sequences {
-    my ($input_file) = @_;
+    my ($input_file, $default_chr) = @_;
     open my $fh, "<", $input_file or die "Cannot open input file ($input_file): $!\n";
 
 #    my $output_file = "matchedseqs_annotate.txt";
@@ -289,8 +296,9 @@ sub process_matched_sequences {
     ), "\n";
 #    close $out_fh;
 
-    my $temp_dir = "/tmp/perl_parallel";
-    mkdir $temp_dir unless -d $temp_dir;
+    my $base_tmp = $ENV{TMPDIR} || "/tmp";
+    my $temp_dir = File::Spec->catdir($base_tmp, "perl_parallel_$$");
+    make_path($temp_dir) unless -d $temp_dir;
 
     while (<$fh>) {
         chomp;
@@ -300,8 +308,8 @@ sub process_matched_sequences {
         # Expected: start, end, strand, matched seq, marker_id, length, occurrences, upstream, downstream
         my ($start, $end, $strand, $seq, $marker_id, $length, $occurrences, $upstream, $downstream) = @fields;
         next unless ($start =~ /^\d+$/ && $end =~ /^\d+$/);
-        # Assume chromosome is provided or use default ("chr1"); adjust if needed.
-        my $chr = "chr1";
+        # Assume chromosome is provided as argument; default is configured by caller.
+        my $chr = $default_chr;
 
         $pm->start and next;
 
@@ -338,6 +346,7 @@ sub process_matched_sequences {
         unlink "$temp_dir/$file";
     }
     closedir $dir;
+    remove_tree($temp_dir);
 #    close $out_fh;
 }
 
@@ -345,15 +354,16 @@ sub process_matched_sequences {
 # Main Execution
 ############################################
 
-my ($input_file, $gff_file, $tss_file, $cpg_file, $repeat_file) = @ARGV;
-die "Usage: $0 <matchedseqs.txt> <gff3[.gz]> <tss[.gz]> <cpg[.gz]> <repeatmasker[.gz]>\n"
-    unless @ARGV == 5;
+my ($input_file, $gff_file, $tss_file, $cpg_file, $repeat_file, $default_chr) = @ARGV;
+$default_chr ||= "chr1";
+die "Usage: $0 <matchedseqs.txt> <gff3[.gz]> <tss[.gz]> <cpg[.gz]> <repeatmasker[.gz]> [chromosome]\n"
+    unless @ARGV == 5 || @ARGV == 6;
 
 load_gene_annotation($gff_file);
 load_tss_data($tss_file);
 load_cpg_data($cpg_file);
 load_repeatmasker_data($repeat_file);
-process_matched_sequences($input_file);
+process_matched_sequences($input_file, $default_chr);
 
 #print "Done.\n";
 exit 0;
