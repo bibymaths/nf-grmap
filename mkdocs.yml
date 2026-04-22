@@ -1,41 +1,54 @@
 site_name: GRmap
-site_description: 'Documentation for matching sequencing reads to a reference genome and annotating the matched sequences with genomic features.'
-site_author: 'Abhinav Mishra'
+site_description: Nextflow DSL2 workflow for read matching and genomic annotation
+site_author: Abhinav Mishra and contributors
 site_url: https://bibymaths.github.io/grmap
-use_directory_urls: false
 repo_url: https://github.com/bibymaths/grmap
+use_directory_urls: false
 
 theme:
-  name: readthedocs
-  language: en
+  name: material
   features:
     - navigation.tabs
+    - navigation.sections
+    - navigation.expand
     - content.code.copy
-
-nav:
-  - Home: index.md
-  - Quickstart: quickstart.md
-  - Pipeline Overview:
-      - Workflow Diagram: workflow.md
-      - Process Details: processes.md
-  - Configuration:
-      - Parameters: parameters.md
-  - Results:
-      - Output Structure: outputs.md
-  - References: references.md
-  - About: about.md
-
-markdown_extensions:
-  - toc:
-      permalink: true
-  - admonition
-  - codehilite
+    - content.tabs.link
+    - search.highlight
+    - search.suggest
+  palette:
+    - scheme: default
+      primary: teal
+      accent: indigo
 
 plugins:
   - search
 
-watch:
-  - docs
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - def_list
+  - tables
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
 
-copyright: >
-  Copyright &copy; 2023 <a href="https://bibymaths.github.io">Abhinav Mishra</a>.
+nav:
+  - Overview: index.md
+  - Implementation audit: audit.md
+  - Architecture: architecture.md
+  - Installation: installation.md
+  - Quick start: quickstart.md
+  - Parameters: parameters.md
+  - Inputs and outputs: io.md
+  - Running locally and on HPC: execution.md
+  - Multi-chromosome extension guide: multi_chromosome.md
+  - Testing: testing.md
+  - Developer guide: developer.md
+  - Contributing: contributing.md
+  - Changelog and releases: changelog.md
+  - Citation: citation.md

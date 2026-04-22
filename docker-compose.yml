@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  grmap:
+    build: .
+    image: grmap:dev
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    command: bash -lc "nextflow run . -profile docker"

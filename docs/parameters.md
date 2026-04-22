@@ -1,21 +1,15 @@
-# Configuration Parameters
+# Parameters
 
-Edit `config.yaml` with the following keys:
-
-| Key           | Description                                  | Example                                         |
-|---------------|----------------------------------------------|-------------------------------------------------|
-| `read`        | Glob pattern for input reads                 | `data/reads/illumina_reads_*.fasta.gz`          |
-| `reference`   | Reference genome FASTA                       | `data/ref/hg38_partial.fasta.gz`                |
-| `annotations` | Directory containing annotation files        | `data/annotations`                              |
-| `scripts_dir` | Directory containing the Perl scripts        | `scripts`                                       |
-| `results_dir` | Output directory for pipeline results        | `results`                                       |
-
-Example `config.yaml`:
-
-```yaml
-read: "data/reads/illumina_reads_*.fasta.gz"
-reference: "data/ref/hg38_partial.fasta.gz"
-annotations: "data/annotations"
-scripts_dir: "scripts"
-results_dir: "results"
-```
+| Parameter | Description | Default |
+|---|---|---|
+| `--input` | Read file glob used when no samplesheet is provided | `data/reads/*.fasta.gz` |
+| `--samplesheet` | CSV with `sample,reads,chromosome,gff,tss,cpg,repeatmasker` | `null` |
+| `--reference` | Reference FASTA/FASTA.GZ | `data/ref/hg38_partial.fasta.gz` |
+| `--querysize` | Max query records passed to `match.pl`; `0` means all | `10` |
+| `--chromosome` | Default chromosome label in non-samplesheet mode | `chr1` |
+| `--annotation_dir` | Annotation directory | `data/annotations` |
+| `--gff` | GFF3 path override | `${annotation_dir}/hg38_chr1_geneannotation.gff3.gz` |
+| `--tss` | TSS table path override | `${annotation_dir}/hg38_chr1_tss.txt.gz` |
+| `--cpg` | CpG table path override | `${annotation_dir}/hg38_cpg.txt.gz` |
+| `--repeatmasker` | RepeatMasker path override | `${annotation_dir}/hg38_repeatmasker.bed.gz` |
+| `--outdir` | Published output directory | `results` |

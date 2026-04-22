@@ -1,0 +1,3 @@
+sample,reads,chromosome,gff,tss,cpg,repeatmasker
+illumina_reads_40,data/reads/illumina_reads_40.fasta.gz,chr1,data/annotations/hg38_chr1_geneannotation.gff3.gz,data/annotations/hg38_chr1_tss.txt.gz,data/annotations/hg38_cpg.txt.gz,data/annotations/hg38_repeatmasker.bed.gz
+illumina_reads_60,data/reads/illumina_reads_60.fasta.gz,chr1,data/annotations/hg38_chr1_geneannotation.gff3.gz,data/annotations/hg38_chr1_tss.txt.gz,data/annotations/hg38_cpg.txt.gz,data/annotations/hg38_repeatmasker.bed.gz

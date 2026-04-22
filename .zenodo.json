@@ -1,0 +1,13 @@
+{
+  "title": "GRmap",
+  "description": "Nextflow DSL2 workflow for read matching and genomic annotation",
+  "creators": [
+    {
+      "name": "Mishra, Abhinav",
+      "affiliation": "Freie Universität Berlin"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": ["nextflow", "bioinformatics", "genomics", "workflow", "perl"],
+  "upload_type": "software"
+}
