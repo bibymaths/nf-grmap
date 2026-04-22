@@ -5,3 +5,4 @@ results_test/
 work/
 __pycache__/
 bin/__pycache__/
+.perl5
