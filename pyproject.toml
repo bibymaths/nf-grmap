@@ -1,6 +1,6 @@
 [project]
 name = "grmap-local-tools"
-version = "0.1.0"
+version = "0.3.0"
 description = "Local Python dependencies for GRMAP plotting utilities"
 requires-python = ">=3.10"
 dependencies = [
