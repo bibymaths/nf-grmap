@@ -94,7 +94,6 @@ markdown_extensions:
 
 nav:
   - Overview: index.md
-  - Implementation audit: audit.md
   - Architecture: architecture.md
   - Installation: installation.md
   - Quick start: quickstart.md
