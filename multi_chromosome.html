@@ -12,25 +12,31 @@
         <meta name="author" content="Abhinav Mishra and contributors">
       
       
+        <link rel="canonical" href="https://bibymaths.github.io/grmap/multi_chromosome.html">
       
+      
+        <link rel="prev" href="execution.html">
+      
+      
+        <link rel="next" href="testing.html">
       
       
         
       
       
-      <link rel="icon" href="/grmap/assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>GRmap</title>
+        <title>Multi-chromosome extension guide - GRmap</title>
       
     
     
-      <link rel="stylesheet" href="/grmap/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/grmap/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="/grmap/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/grmap/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#multi-chromosome-extension-guide" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/grmap/index.html" title="GRmap" class="md-header__button md-logo" aria-label="GRmap" data-md-component="logo">
+    <a href="index.html" title="GRmap" class="md-header__button md-logo" aria-label="GRmap" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -107,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Multi-chromosome extension guide
             
           </span>
         </div>
@@ -225,7 +236,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/grmap/index.html" title="GRmap" class="md-nav__button md-logo" aria-label="GRmap" data-md-component="logo">
+    <a href="index.html" title="GRmap" class="md-nav__button md-logo" aria-label="GRmap" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -255,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -282,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/architecture.html" class="md-nav__link">
+      <a href="architecture.html" class="md-nav__link">
         
   
   
@@ -309,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/installation.html" class="md-nav__link">
+      <a href="installation.html" class="md-nav__link">
         
   
   
@@ -336,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/quickstart.html" class="md-nav__link">
+      <a href="quickstart.html" class="md-nav__link">
         
   
   
@@ -363,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/parameters.html" class="md-nav__link">
+      <a href="parameters.html" class="md-nav__link">
         
   
   
@@ -390,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/io.html" class="md-nav__link">
+      <a href="io.html" class="md-nav__link">
         
   
   
@@ -417,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/execution.html" class="md-nav__link">
+      <a href="execution.html" class="md-nav__link">
         
   
   
@@ -441,10 +452,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/grmap/multi_chromosome.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-chromosome extension guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="multi_chromosome.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -460,6 +498,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-chr1-was-hard-coded-historically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where chr1 was hard-coded historically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-scaling-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended scaling pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancement-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future enhancement path
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -471,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/testing.html" class="md-nav__link">
+      <a href="testing.html" class="md-nav__link">
         
   
   
@@ -498,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/developer.html" class="md-nav__link">
+      <a href="developer.html" class="md-nav__link">
         
   
   
@@ -525,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/contributing.html" class="md-nav__link">
+      <a href="contributing.html" class="md-nav__link">
         
   
   
@@ -552,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/changelog.html" class="md-nav__link">
+      <a href="changelog.html" class="md-nav__link">
         
   
   
@@ -579,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/grmap/citation.html" class="md-nav__link">
+      <a href="citation.html" class="md-nav__link">
         
   
   
@@ -616,6 +718,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-chr1-was-hard-coded-historically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where chr1 was hard-coded historically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-scaling-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended scaling pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancement-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future enhancement path
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -628,8 +784,46 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="multi-chromosome-extension-guide">Multi-chromosome extension guide<a class="headerlink" href="#multi-chromosome-extension-guide" title="Permanent link">&para;</a></h1>
+<h2 id="where-chr1-was-hard-coded-historically">Where chr1 was hard-coded historically<a class="headerlink" href="#where-chr1-was-hard-coded-historically" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Snakemake <code>annotate</code> rule used fixed chr1 filenames.</li>
+<li><code>scripts/annotate.pl</code> assigned <code>chr1</code> internally for all matches.</li>
+</ul>
+<h2 id="what-changed">What changed<a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>annotate.pl</code> now accepts optional chromosome argument (<code>[chromosome]</code>, default <code>chr1</code>).</li>
+<li>Nextflow metadata map carries <code>chromosome</code>, <code>gff</code>, <code>tss</code>, <code>cpg</code>, <code>repeatmasker</code> per sample row.</li>
+</ul>
+<h2 id="recommended-scaling-pattern">Recommended scaling pattern<a class="headerlink" href="#recommended-scaling-pattern" title="Permanent link">&para;</a></h2>
+<p>Use <code>--samplesheet</code> with one row per <code>(sample, chromosome annotation set)</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sample,reads,chromosome,gff,tss,cpg,repeatmasker
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sampleA_chr1,reads_A.fasta.gz,chr1,chr1.gff3.gz,chr1_tss.txt.gz,cpg.txt.gz,repeatmasker.bed.gz
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sampleA_chr2,reads_A.fasta.gz,chr2,chr2.gff3.gz,chr2_tss.txt.gz,cpg.txt.gz,repeatmasker.bed.gz
+</span></code></pre></div>
+<p>This pattern propagates chromosome metadata in channels and keeps output naming sample-scoped.</p>
+<h2 id="future-enhancement-path">Future enhancement path<a class="headerlink" href="#future-enhancement-path" title="Permanent link">&para;</a></h2>
+<p>If match coordinates become multi-chromosome aware, pass chromosome directly from matcher output instead of fixed per-row metadata.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -647,6 +841,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="execution.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Running locally and on HPC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Running locally and on HPC
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="testing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Testing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Testing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -694,12 +926,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/grmap/", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "/grmap/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/grmap/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="/grmap/javascripts/mathjax.js"></script>
+        <script src="javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

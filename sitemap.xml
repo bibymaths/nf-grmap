@@ -2,34 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bibymaths.github.io/grmap/index.html</loc>
-         <lastmod>2025-05-16</lastmod>
+         <lastmod>2026-05-01</lastmod>
     </url>
     <url>
-         <loc>https://bibymaths.github.io/grmap/about.html</loc>
-         <lastmod>2025-05-16</lastmod>
+         <loc>https://bibymaths.github.io/grmap/architecture.html</loc>
+         <lastmod>2026-05-01</lastmod>
     </url>
     <url>
-         <loc>https://bibymaths.github.io/grmap/outputs.html</loc>
-         <lastmod>2025-05-16</lastmod>
+         <loc>https://bibymaths.github.io/grmap/changelog.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/citation.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/contributing.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/developer.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/execution.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/installation.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/io.html</loc>
+         <lastmod>2026-05-01</lastmod>
+    </url>
+    <url>
+         <loc>https://bibymaths.github.io/grmap/multi_chromosome.html</loc>
+         <lastmod>2026-05-01</lastmod>
     </url>
     <url>
          <loc>https://bibymaths.github.io/grmap/parameters.html</loc>
-         <lastmod>2025-05-16</lastmod>
-    </url>
-    <url>
-         <loc>https://bibymaths.github.io/grmap/processes.html</loc>
-         <lastmod>2025-05-16</lastmod>
+         <lastmod>2026-05-01</lastmod>
     </url>
     <url>
          <loc>https://bibymaths.github.io/grmap/quickstart.html</loc>
-         <lastmod>2025-05-16</lastmod>
+         <lastmod>2026-05-01</lastmod>
     </url>
     <url>
-         <loc>https://bibymaths.github.io/grmap/references.html</loc>
-         <lastmod>2025-05-16</lastmod>
-    </url>
-    <url>
-         <loc>https://bibymaths.github.io/grmap/workflow.html</loc>
-         <lastmod>2025-05-16</lastmod>
+         <loc>https://bibymaths.github.io/grmap/testing.html</loc>
+         <lastmod>2026-05-01</lastmod>
     </url>
 </urlset>
